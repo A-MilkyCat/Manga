@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: url('star.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-container img {
+            max-width: 50%; /* 限制寬度為原始寬度的 50% */
+            height: auto;
+            margin-bottom: 0; /* 圖片之間的垂直間距設為 0 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="image-container" id="imageContainer">
+    <!-- JavaScript 將動態生成的 img 標籤添加到這個區塊中 -->
+</div>
+
+<script>
+    // JavaScript 生成 img 標籤
+    var imageContainer = document.getElementById("imageContainer");
+
+    for (var i = 1; i <= 100; i++) {
+        var img = document.createElement("img");
+        img.src = "C:/Users/User/Desktop/html/downloaded_images/" + i + ".jpg";
+        img.alt = "Image " + i;
+        img.style.maxWidth = "75 %"; // 限制寬度為原始寬度的 50%
+        img.style.height = "auto";
+        imageContainer.appendChild(img);
+    }
+</script>
+
+</body>
+</html>
